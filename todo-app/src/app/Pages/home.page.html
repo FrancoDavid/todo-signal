@@ -1,9 +1,14 @@
 <section class="section-inputs">
     <div class="container-input">
-        <todo-input />
-    </div>
-    
-    <todo-button />
+        <todo-input
+            [ariaLabel]="'Nueva tarea'"
+            [placeholder]="'Ingresa nueva tarea...'"
+            [maxLength]="100"
+            [minLength]="1"
+            [(value)]="newTodo"
+        />
+    </div>    
+    <todo-button (click)="onAddTodo()"/>
 </section>
 
 <section class="section-summary">

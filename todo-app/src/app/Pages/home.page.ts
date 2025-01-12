@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.page.css']
 })
 export class HomePage {
+  newTodo: string = ''
+
+  onAddTodo() {
+    console.log('onAddTodo', this.newTodo)
+  }
 }
