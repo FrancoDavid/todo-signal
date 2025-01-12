@@ -1,1 +1,7 @@
-<button>Agregar</button>
+<button
+    type="button"
+    [attr.aria-label]="ariaLabel"
+    [attr.aria-disabled]="disabled"
+    [disabled]="disabled">
+    <ng-content></ng-content>
+</button>

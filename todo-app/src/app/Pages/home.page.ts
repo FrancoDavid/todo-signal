@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, WritableSignal } from '@angular/core';
+ 
+import { TodoService } from '../Services/todo.service';
+import { TaskTodo } from '../Interfaces/task.interface';
 
 @Component({
   selector: 'home-page',
@@ -7,8 +10,18 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
   newTodo: string = ''
+  tasks: WritableSignal<TaskTodo[]> = this._todoService.taskList;
+
+  constructor(private _todoService: TodoService) {}
 
   onAddTodo() {
-    console.log('onAddTodo', this.newTodo)
+    if (!this.newTodo) return
+    
+    this._todoService.addNewTask(this.newTodo)
+    this.newTodo = '';
+  }
+
+  onCompletedTodo(idTodo: number) {
+    this._todoService.completedTask(idTodo)
   }
 }

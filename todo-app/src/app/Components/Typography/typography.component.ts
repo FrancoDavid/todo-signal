@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ColorsType } from './typography.enum'
-
 @Component({
   selector: 'todo-typography',
   standalone: true,

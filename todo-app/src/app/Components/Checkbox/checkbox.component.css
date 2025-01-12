@@ -5,6 +5,15 @@ label {
     font-size: 14px;
     user-select: none;
 }
+
+.regular {
+    color: var(--gray-200)
+}
+
+.deactivated {
+    color: var(--gray-300)
+}
+
 input[type="checkbox"] {
     display: none;
 }
@@ -36,4 +45,8 @@ input[type="checkbox"]:checked+.custom-checkbox {
 }
 input[type="checkbox"]:checked+.custom-checkbox::after {
     transform: translate(-50%, -50%) scale(1);
+}
+
+input[type="checkbox"]:not(:checked) + .custom-checkbox {
+    background-color: transparent;
 }

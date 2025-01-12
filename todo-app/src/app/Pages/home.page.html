@@ -8,7 +8,12 @@
             [(value)]="newTodo"
         />
     </div>    
-    <todo-button (click)="onAddTodo()"/>
+    <todo-button
+        [ariaLabel]="'Agregar nueva tarea'"
+        [disabled]="!newTodo"
+        (click)="onAddTodo()">
+        Agregar
+    </todo-button>
 </section>
 
 <section class="section-summary">
@@ -30,12 +35,16 @@
     </div>
 </section>
 
-<section class="section-content">
+<section class="section-content" *ngFor="let task of tasks()">
     <todo-card>
-        <todo-checkbox>
-            chupalo ctm
+        <todo-checkbox
+            [value]="task.isCompleted"
+            [lineThrough]="task.isCompleted"
+            [color]="task.isCompleted ? 'deactivated' : 'regular'"
+            (change)="onCompletedTodo(task.id)"
+        >
+            {{task.title}}
         </todo-checkbox>
-        <todo-button />
     </todo-card>
 </section>
 

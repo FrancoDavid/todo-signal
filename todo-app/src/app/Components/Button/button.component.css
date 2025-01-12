@@ -5,3 +5,7 @@ button {
     border-radius: 8px;
     border: 1px solid var(--blue-dark)
 }
+
+button:disabled {
+    background-color: var(--gray-200);
+}

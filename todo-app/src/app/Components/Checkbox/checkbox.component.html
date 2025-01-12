@@ -1,5 +1,5 @@
-<label>
-    <input type="checkbox">
+<label [ngStyle]="styleList" [ngClass]="classList">
+    <input type="checkbox" [checked]="value" />
     <span class="custom-checkbox"></span>
     <ng-content></ng-content>
 </label>
