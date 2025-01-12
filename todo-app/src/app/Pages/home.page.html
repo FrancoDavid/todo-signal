@@ -1,1 +1,36 @@
-<h1>hOLA SOY EL GOME</h1>
+<section class="section-inputs">
+    <div class="container-input">
+        <todo-input />
+    </div>
+    
+    <todo-button />
+</section>
+
+<section class="section-summary">
+    <div>
+        <todo-typography [color]="'blue'" [fontWeight]="'bold'" [fontSize]="'14px'" [display]="'inline'" [textAlign]="'left'">
+            Tareas creadas
+        </todo-typography>
+        <todo-bubble>
+            2
+        </todo-bubble>
+    </div>
+    <div>
+        <todo-typography [color]="'purple'" [fontWeight]="'bold'" [fontSize]="'14px'" [display]="'inline'" [textAlign]="'right'">
+            Concluidas
+        </todo-typography>
+        <todo-bubble>
+            2 de 4
+        </todo-bubble>
+    </div>
+</section>
+
+<section class="section-content">
+    <todo-card>
+        <todo-checkbox>
+            chupalo ctm
+        </todo-checkbox>
+        <todo-button />
+    </todo-card>
+</section>
+

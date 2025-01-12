@@ -1,0 +1,9 @@
+.blue {
+    color: var(--blue)
+}
+.purple {
+    color: var(--purple-dark)
+}
+.white {
+    color: var(--gray-100)
+}

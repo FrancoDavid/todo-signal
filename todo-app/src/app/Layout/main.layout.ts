@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.layout.css']
 })
 export class MainLayout {
-  title = 'todo - Angular with Signal';
+  nameApp = 'todo';
+  titleApp = 'Angular with Signal';
 }

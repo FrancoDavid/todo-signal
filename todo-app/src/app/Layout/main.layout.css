@@ -1,0 +1,25 @@
+header {
+    background-color: var(--gray-700);
+    padding: 72px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+header h1 {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+header h1:first-of-type {
+    color: var(--blue);
+}
+
+header h1:last-of-type {
+    color: var(--purple-dark);
+}
+
+main {
+    background-color: var(--gray-600);
+    height: 100%;
+}

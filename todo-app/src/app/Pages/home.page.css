@@ -1,0 +1,23 @@
+section {
+    display: flex;
+    max-width: 600px;
+}
+.section-inputs {
+    justify-content:space-around;
+    margin: 0 auto 24px;
+    position: relative;
+    z-index: 2;
+    top: -32px
+}
+.section-summary {
+    justify-content: space-between;
+    margin: 0 auto 24px;
+}
+.section-content {
+    justify-content: center;
+    margin: 0 auto;
+}
+.container-input {
+    width: 65%;
+    margin: 0 16px;
+}
