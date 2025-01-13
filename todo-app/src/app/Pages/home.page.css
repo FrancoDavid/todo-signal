@@ -21,3 +21,7 @@ section {
     width: 65%;
     margin: 0 16px;
 }
+
+.delete-icon {
+    color: var(--gray-300)
+}

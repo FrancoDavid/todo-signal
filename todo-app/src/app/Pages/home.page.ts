@@ -11,6 +11,8 @@ import { TaskTodo } from '../Interfaces/task.interface';
 export class HomePage {
   newTodo: string = ''
   tasks: WritableSignal<TaskTodo[]> = this._todoService.taskList;
+  completedTasks = this._todoService.completedTasksCount;
+  countTasks = this._todoService.taskCount;
 
   constructor(private _todoService: TodoService) {}
 
@@ -23,5 +25,9 @@ export class HomePage {
 
   onCompletedTodo(idTodo: number) {
     this._todoService.completedTask(idTodo)
+  }
+
+  onDeleteTodo(idTodo: number) {
+    this._todoService.deleteTask(idTodo)
   }
 }

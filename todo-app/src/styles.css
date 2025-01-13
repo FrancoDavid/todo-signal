@@ -10,7 +10,7 @@
 
     --blue: #4EA8DE;
     --blue-dark: #1E6F9F;
-    
+
     --purple-dark: #5E60CE;
 }
 
@@ -19,4 +19,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     height: 100vh;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

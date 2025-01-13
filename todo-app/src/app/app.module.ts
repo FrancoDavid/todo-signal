@@ -15,6 +15,9 @@ import { BubbleComponent } from "./Components/Bubble/bubble.component";
 import { CardComponent } from "./Components/Card/card.component";
 import { CheckboxComponent } from "./Components/Checkbox/checkbox.component";
 
+import { MatIconModule } from '@angular/material/icon';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import { CheckboxComponent } from "./Components/Checkbox/checkbox.component";
     TypographyComponent,
     BubbleComponent,
     CardComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    MatIconModule
 ],
   providers: [],
   bootstrap: [AppComponent]

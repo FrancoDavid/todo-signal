@@ -12,7 +12,7 @@
         [ariaLabel]="'Agregar nueva tarea'"
         [disabled]="!newTodo"
         (click)="onAddTodo()">
-        Agregar
+        <mat-icon aria-hidden="false" aria-label="Agregar nueva tarea" fontIcon="add"></mat-icon>
     </todo-button>
 </section>
 
@@ -22,7 +22,7 @@
             Tareas creadas
         </todo-typography>
         <todo-bubble>
-            2
+            {{countTasks()}}
         </todo-bubble>
     </div>
     <div>
@@ -30,7 +30,7 @@
             Concluidas
         </todo-typography>
         <todo-bubble>
-            2 de 4
+            {{completedTasks()}} de {{countTasks()}}
         </todo-bubble>
     </div>
 </section>
@@ -45,6 +45,13 @@
         >
             {{task.title}}
         </todo-checkbox>
+        <mat-icon
+            aria-hidden="false"
+            aria-label="Remover tarea"
+            class="delete-icon"
+            fontIcon="delete"
+            (click)="onDeleteTodo(task.id)">
+        </mat-icon>
     </todo-card>
 </section>
 

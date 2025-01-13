@@ -1,4 +1,4 @@
-import { Injectable, signal, WritableSignal } from '@angular/core';
+import { Injectable, signal, WritableSignal, computed, Signal } from '@angular/core';
 
 import { TaskTodo } from '../Interfaces/task.interface'
 
@@ -8,8 +8,24 @@ import { TaskTodo } from '../Interfaces/task.interface'
 export class TodoService {
 
   private _taskList: WritableSignal<TaskTodo[]> = signal<TaskTodo []>([]);
+  private _completedTasks = computed(() => this.taskList().filter(task => task.isCompleted).length);
+  private _countTasksList = computed(() => this.taskList().length)
+
 
   constructor() {}
+  
+  get taskList(): WritableSignal<TaskTodo[]> {
+    return this._taskList;
+  }
+
+  get completedTasksCount(): Signal<Number> {
+    return this._completedTasks
+  }
+
+  get taskCount(): Signal<Number> {
+    return this._countTasksList
+  }
+
 
   addNewTask(nameTask: string) {
     const newTask: TaskTodo = { id: Date.now(), title: nameTask, isCompleted: false };
@@ -17,12 +33,7 @@ export class TodoService {
     this._taskList.update((currentTasks) => [...currentTasks, newTask])
   }
 
-  get taskList(): WritableSignal<TaskTodo[]> {
-    return this._taskList;
-  }
-
   completedTask(idTask: number) {
-    console.log('idTask: ', idTask);
     this._taskList.update((currentTasks) => {
       return currentTasks.map((currentTask) => {
         if (currentTask.id === idTask) {
@@ -34,6 +45,12 @@ export class TodoService {
           return currentTask
         }
       })
+    })
+  }
+
+  deleteTask(idTask: number) {
+    this._taskList.update((currentTasks) => {
+      return currentTasks.filter((currentTask) => currentTask.id !== idTask)
     })
   }
 }
