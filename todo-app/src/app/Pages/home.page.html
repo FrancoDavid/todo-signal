@@ -55,3 +55,12 @@
     </todo-card>
 </section>
 
+<section class="section-no-content" *ngIf="tasks().length <= 0">
+    <h3>No has ingresado tareas por el momento</h3>
+    <mat-icon
+        aria-hidden="false"
+        aria-label="No existen tareas por el momento"
+        fontIcon="hourglass_empty">
+    </mat-icon>
+</section>
+

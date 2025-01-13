@@ -16,12 +16,21 @@ section {
 .section-content {
     justify-content: center;
     margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+    min-width: 300px
 }
 .container-input {
     width: 65%;
     margin: 0 16px;
 }
-
 .delete-icon {
     color: var(--gray-300)
+}
+.section-no-content {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    color: var(--gray-300);
 }
